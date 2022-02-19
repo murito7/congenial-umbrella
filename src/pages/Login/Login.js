@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import useLogin from "../../hooks/useLogin";
+import './Login.css';
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -13,7 +14,12 @@ export default function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="box">
+      <div className="page-messages">
+        <h1>Welcome</h1>
+        <h2>Login here please !</h2>
+      </div>
+      <form onSubmit={handleSubmit}>
       <input
         type="email"
         placeholder="email"
@@ -28,5 +34,6 @@ export default function Register() {
       />
       <button>login</button>
     </form>
+    </div>
   );
 }
