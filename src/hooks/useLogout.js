@@ -3,27 +3,26 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router";
 
-export default function useLogin() {
+export default function useLogout() {
+  const { setUser } = useContext(AuthContext);
   let Navigate = useNavigate();
-  const {setUser} = useContext(AuthContext);
-  const login = async (email, password) => {
+  const logout = async () => {
     try {
-      const response = await fetch(`${api}/login`, {
+      const response = await fetch(`${api}/logout`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          email,
-          password,
+            token: localStorage.getItem('jwt')
         }),
       });
       const data = await response.json();
-      localStorage.setItem("jwt", data.accessToken);
-      localStorage.setItem("lifespan", data.expiresIn);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      setUser(true);
+      localStorage.removeItem('jwt')
+      localStorage.removeItem('lifespan')
+      localStorage.removeItem('refreshToken')
+      setUser(false);
       Navigate("/");
       return data;
     } catch (err) {
@@ -32,5 +31,5 @@ export default function useLogin() {
       }
     }
   };
-  return { login };
+  return { logout };
 }

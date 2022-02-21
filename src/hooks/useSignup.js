@@ -1,6 +1,8 @@
 import { api } from '../api/api'
+import { useNavigate } from "react-router";
 
 export default function useSignup() {
+    let Navigate = useNavigate();
     const signup = async (email, password) => {
       try {
         const response = await fetch(`${api}/register`, {
@@ -15,7 +17,7 @@ export default function useSignup() {
           }),
         });
         const data = await response.json();
-        console.log(data);
+        Navigate("/login");
         return data.success;
       } catch (err) {
         if (err) {

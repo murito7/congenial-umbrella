@@ -4,8 +4,21 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import HomePage from './pages/HomePage/HomePage';
 import Navbar from './components/Navbar/Navbar'
+import { useEffect } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const { user, setUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    setUser(JSON.parse(window.localStorage.getItem('user')));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('user', user);
+  }, [user])
+
   return (
     <Router>
       <Navbar/>
