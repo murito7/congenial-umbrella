@@ -1,16 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import useSignup from "../../hooks/useSignup";
+import authService from "../../auth/authService";
 import './Register.css';
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password);
+    authService.signup(email, password);
   };
 
   return (
