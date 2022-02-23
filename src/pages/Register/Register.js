@@ -1,16 +1,18 @@
 import React from "react";
 import { useState } from "react";
-import useSignup from "../../hooks/useSignup";
-import './Register.css';
+import { useNavigate } from "react-router";
+import authService from "../../auth/authService";
+import "./Register.css";
 
 export default function Register() {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password);
+    authService.signup(email, password);
+    navigate("/login");
   };
 
   return (

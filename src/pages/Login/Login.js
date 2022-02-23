@@ -1,16 +1,23 @@
 import React from "react";
 import { useState } from "react";
-import useLogin from "../../hooks/useLogin";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router";
+import authService from "../../auth/authService";
 import "./Login.css";
 
-export default function Register() {
+export default function Login() {
+  let navigate = useNavigate();
+  const { setUser } = useContext(AuthContext);
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    authService.login(email, password);
+    setUser(true);
+    navigate("/");
   };
 
   return (

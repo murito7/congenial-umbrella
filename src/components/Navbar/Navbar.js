@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import useLogout from "../../hooks/useLogout";
+import { useNavigate } from "react-router";
+import authService from "../../auth/authService";
 
 export default function Navbar() {
-  const { logout } = useLogout();
-  const { user } = useContext(AuthContext);
+  let navigate = useNavigate()
+  const { user, setUser } = useContext(AuthContext);
+
+  const logout = () => {
+    authService.logout()
+    setUser(false);
+    navigate('/login');
+  }
+
   return (
     <div className="navbar">
       <ul>
