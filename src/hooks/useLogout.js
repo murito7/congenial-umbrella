@@ -23,7 +23,7 @@ export default function useLogout() {
       localStorage.removeItem('lifespan')
       localStorage.removeItem('refreshToken')
       setUser(false);
-      Navigate("/");
+      Navigate("/login");
       return data;
     } catch (err) {
       if (err) {

@@ -10,6 +10,7 @@ import { AuthContext } from "./context/AuthContext";
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
+  
 
   useEffect(() => {
     setUser(JSON.parse(window.localStorage.getItem('user')));
@@ -23,7 +24,7 @@ function App() {
     <Router>
       <Navbar/>
         <Routes>
-          <Route path="/" element = {<HomePage />} />
+          <Route path="/" element = {(user && <HomePage />)|| (!user && <Navigate to ="/login"/>)} />
           <Route path="/login" element = {<Login/>}/>
           <Route path="/register"  element = {<Register/>}/>
           <Route path="/product/:id" />        
