@@ -22,7 +22,7 @@ export default function Navbar() {
       <ul>
         <li>{!user && <Link to="/login">Login</Link>}</li>
         <li>{!user && <Link to="/register">Signup</Link>}</li>
-        {user && <li>{<button onClick={() => logout()}>Logout</button>}</li>}
+        {user && <li>{<button className="test" onClick={() => logout()}>Logout</button>}</li>}
       </ul>
     </div>
   );
