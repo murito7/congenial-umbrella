@@ -18,6 +18,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
+      <h1>REACT APP</h1>
       <ul>
         <li>{!user && <Link to="/login">Login</Link>}</li>
         <li>{!user && <Link to="/register">Signup</Link>}</li>
