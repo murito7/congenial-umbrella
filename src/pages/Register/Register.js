@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import authService from "../../auth/authService";
+import Navbar from "../../components/Navbar/Navbar"
 import "./Register.css";
 
 export default function Register() {
@@ -16,7 +17,9 @@ export default function Register() {
   };
 
   return (
-    <div className="box">
+    <>
+      <Navbar/>    
+      <div className="box">
       <div className="page-messages">
         <h1>Welcome</h1>
         <h2>Register here please !</h2>
@@ -37,5 +40,6 @@ export default function Register() {
         <button>submit</button>
       </form>
     </div>
+    </>
   );
 }
