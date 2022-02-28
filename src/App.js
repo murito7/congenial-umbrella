@@ -22,8 +22,8 @@ function App() {
     <Router>
         <Routes>
           <Route path="/" element = {(user && <HomePage />)|| (!user && <Navigate to ="/login"/>)} />
-          <Route path="/login" element = {<Login/>}/>
-          <Route path="/register"  element = {<Register/>}/>
+          <Route path="/login" element = {(!user && <Login/>) || (user && <Navigate to ="/"/>)}/>
+          <Route path="/register"  element = {(!user && <Register/>) || (user && <Navigate to ="/"/>)}/>
         </Routes>
     </Router>
   );
