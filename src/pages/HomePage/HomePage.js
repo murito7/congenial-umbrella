@@ -10,9 +10,9 @@ import Navbar from "../../components/Navbar/Navbar"
 
 export default function HomePage() {
   return (
-    <>
+    <div className="wrapper">
     <Navbar/>
-<div className='content'>
+      <div className='content'>
       <h1>Welcome to the Home Page</h1>
       <h3>Here you can see all of our projects</h3>
       <div className='projects'>
@@ -44,7 +44,6 @@ export default function HomePage() {
         />
       </div>
     </div>    
-    </>
-
+    </div>
   )
 }

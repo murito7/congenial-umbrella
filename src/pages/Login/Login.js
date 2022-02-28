@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
 import authService from "../../auth/authService";
+import Navbar from "../../components/Navbar/Navbar"
 import "./Login.css";
 
 export default function Login() {
@@ -26,6 +27,8 @@ export default function Login() {
   };
 
   return (
+    <div className="wrapper">
+    <Navbar/>
     <div className="box">
       <div className="page-messages">
         <h1>Welcome</h1>
@@ -46,6 +49,7 @@ export default function Login() {
         />
         <button>login</button>
       </form>
+    </div>
     </div>
   );
 }

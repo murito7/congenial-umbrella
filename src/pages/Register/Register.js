@@ -17,7 +17,7 @@ export default function Register() {
   };
 
   return (
-    <>
+    <div className="wrapper">
       <Navbar/>    
       <div className="box">
       <div className="page-messages">
@@ -40,6 +40,6 @@ export default function Register() {
         <button>submit</button>
       </form>
     </div>
-    </>
+    </div>
   );
 }
