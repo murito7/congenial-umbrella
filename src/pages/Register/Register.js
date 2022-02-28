@@ -9,10 +9,12 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    authService.signup(email, password);
-    navigate("/login");
+    const data = await authService.signup(email, password);
+    if (!data.errors) {
+      navigate("/login");
+    }
   };
 
   return (
