@@ -5,7 +5,6 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
 import authService from "../../auth/authService";
 import "./Login.css";
-import Navbar from "../../components/Navbar/Navbar"
 
 export default function Login() {
   let navigate = useNavigate();
@@ -14,16 +13,19 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    authService.login(email, password);
-    setUser(true);
-    navigate("/");
+    const data = await authService.login(email, password);
+    if(!data.errors){
+      localStorage.setItem("jwt", data.accessToken);
+      localStorage.setItem("lifespan", data.expiresIn);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      setUser(true);
+      navigate("/");
+    }
   };
 
   return (
-    <>
-    <Navbar/>
     <div className="box">
       <div className="page-messages">
         <h1>Welcome</h1>
@@ -45,6 +47,5 @@ export default function Login() {
         <button>login</button>
       </form>
     </div>
-    </>
   );
 }
