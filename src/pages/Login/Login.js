@@ -13,11 +13,16 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    authService.login(email, password);
-    setUser(true);
-    navigate("/");
+    const data = await authService.login(email, password);
+    if(!data.errors){
+      localStorage.setItem("jwt", data.accessToken);
+      localStorage.setItem("lifespan", data.expiresIn);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      setUser(true);
+      navigate("/");
+    }
   };
 
   return (

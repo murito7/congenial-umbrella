@@ -34,9 +34,6 @@ const login = async (email, password) => {
       }),
     });
     const data = await response.json();
-    localStorage.setItem("jwt", data.accessToken);
-    localStorage.setItem("lifespan", data.expiresIn);
-    localStorage.setItem("refreshToken", data.refreshToken);
     return data;
   } catch (err) {
     if (err) {
