@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import { useEffect } from 'react';
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Ghsearch from "./components/Github-search/Ghsearch";
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element = {(user && <HomePage />)|| (!user && <Navigate to ="/login"/>)} />
           <Route path="/login" element = {(!user && <Login/>) || (user && <Navigate to ="/"/>)}/>
           <Route path="/register"  element = {(!user && <Register/>) || (user && <Navigate to ="/"/>)}/>
+          <Route path="/gh" element={<Ghsearch/>}/>
         </Routes>
     </Router>
   );
