@@ -10,22 +10,23 @@ import plus from "../../assets/ecommerce-img/icon-plus.svg"
 import minus from "../../assets/ecommerce-img/icon-minus.svg"
 import eLogo from "../../assets/ecommerce-img/logo.svg"
 
-
-const toggleButton = document.getElementsByClassName("e-hamburger")[0];
-const closeButton = document.getElementsByClassName("e-close-btn")[0];
-
-const navbarMobile = document.getElementsByClassName("e-navbar-mobile")[0];
-const navbarToggle = () => navbarMobile.classList.toggle("active");
-
-toggleButton.addEventListener("click", navbarToggle);
-closeButton.addEventListener("click", navbarToggle);
+function showNav() {
+  const toggleButton = document.getElementsByClassName("e-hamburger")[0];
+  const closeButton = document.getElementsByClassName("e-close-btn")[0];
+  
+  const navbarMobile = document.getElementsByClassName("e-navbar-mobile")[0];
+  const navbarToggle = () => navbarMobile.classList.toggle("active");
+  
+  toggleButton.addEventListener("click", navbarToggle);
+  closeButton.addEventListener("click", navbarToggle);
+}
 
 function Ecommerce() {
   return (
     <body className='e-body'>
   <div className="e-container">
     <div className="e-navbar-mobile">
-      <svg className="e-close-btn" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+      <svg className="e-close-btn"  onClick={()=> showNav()} width="14" height="15" xmlns="http://www.w3.org/2000/svg">
         <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
       </svg>
       <ul>
@@ -38,7 +39,7 @@ function Ecommerce() {
     </div>
     <div className="e-navbar">
       <div className="e-navbar-left">
-        <svg className="e-hamburger" width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+        <svg className="e-hamburger"  onClick={()=> showNav()} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/>
         </svg>
         <img className='eLogo' src={eLogo}></img>
