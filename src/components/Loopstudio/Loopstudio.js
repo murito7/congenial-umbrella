@@ -8,6 +8,7 @@ import fb from "../../assets/loopstudios-img/icon-facebook.svg"
 import twitter from "../../assets/loopstudios-img/icon-twitter.svg"
 import pint from "../../assets/loopstudios-img/icon-pinterest.svg"
 import insta from "../../assets/loopstudios-img/icon-instagram.svg"
+import Backbtn from '../Backbtn/Backbtn'
 
 function Loopstudio() {
   const showNav = () => {
@@ -22,6 +23,7 @@ function Loopstudio() {
   }
   return (
     <>
+    <Backbtn/>
         <div className="loop-showcase-hero">
             <div className="loop-items-wrapper">
                 <nav className="loop-navbar-mobile">

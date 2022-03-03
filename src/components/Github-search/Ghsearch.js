@@ -7,9 +7,12 @@ import website from "../../assets/github-user-img/icon-website.svg";
 import twitter from "../../assets/github-user-img/icon-twitter.svg";
 import company from "../../assets/github-user-img/icon-company.svg";
 import "./Ghsearch.css";
+import Backbtn from "../Backbtn/Backbtn";
 
 function Ghsearch() {
   return (
+    <>
+    <Backbtn/>
     <div className="g-body">
       <div className="g-container">
         <div className="g-header">
@@ -79,6 +82,7 @@ function Ghsearch() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

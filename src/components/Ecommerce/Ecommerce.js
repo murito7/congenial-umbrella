@@ -9,6 +9,7 @@ import product4th from "../../assets/ecommerce-img/image-product-4-thumbnail.jpg
 import plus from "../../assets/ecommerce-img/icon-plus.svg"
 import minus from "../../assets/ecommerce-img/icon-minus.svg"
 import eLogo from "../../assets/ecommerce-img/logo.svg"
+import Backbtn from '../Backbtn/Backbtn'
 
 function showNav() {
   const toggleButton = document.getElementsByClassName("e-hamburger")[0];
@@ -23,7 +24,9 @@ function showNav() {
 
 function Ecommerce() {
   return (
-    <body className='e-body'>
+    <>
+      <Backbtn/>
+      <body className='e-body'>
   <div className="e-container">
     <div className="e-navbar-mobile">
       <svg className="e-close-btn"  onClick={()=> showNav()} width="14" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -101,6 +104,7 @@ function Ecommerce() {
 
   </div>
   </body>
+    </>
   )
 }
 

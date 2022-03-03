@@ -1,8 +1,11 @@
 import React from 'react';
 import "./Tipscalc.css";
+import Backbtn from '../Backbtn/Backbtn';
 
 function Tipscalc() {
   return (
+    <>
+      <Backbtn/>
       <body className='calc-body'>
           <div className="calc-container">
     <h1>SPLI<br/>TTER</h1>
@@ -61,6 +64,7 @@ function Tipscalc() {
   </div>
 </div>
       </body>
+    </>
   )
 }
 

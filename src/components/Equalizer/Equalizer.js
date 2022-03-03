@@ -1,11 +1,14 @@
 import "./Equalizer.css";
 import illustration from '../../assets/equalizer-img/illustration-app.png'
 import pattern from '../../assets/equalizer-img/bg-pattern-1.svg';
+import Backbtn from "../Backbtn/Backbtn";
 
 import React from "react";
 
 function Equalizer() {
   return (
+    <>
+    <Backbtn/>
     <div className="equalizer-body">
       <div className="equalizer-showcase-hero">
         <div className="equalizer-nav">
@@ -103,6 +106,7 @@ function Equalizer() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
