@@ -16,7 +16,7 @@ export default function Login() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const data = await authService.login(email, password);
-    if(!data.errors){
+    if(!data.errors && !data.message){
       localStorage.setItem("jwt", data.accessToken);
       localStorage.setItem("lifespan", data.expiresIn);
       localStorage.setItem("refreshToken", data.refreshToken);
