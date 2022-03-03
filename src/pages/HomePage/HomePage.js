@@ -20,27 +20,31 @@ export default function HomePage() {
           image = {loopstudios}
           desc = "Loopstudio"
           text = "View Project"
-          url = "/product"
+          url = "/loopstudio"
         />
         <Card
           image = {calc}
           desc = "Calculator"
           text = "View Project"
+          url = "/tips-calculator"
         />
         <Card
           image = {equalizer}
           desc = "Equalizer"
           text = "View Project"
+          url = "/equalizer"
         />
         <Card
           image = {github}
           desc = "Github search"
           text = "View Project"
+          url = "/github-user-search-app"
         />
         <Card
           image = {e_commerce}
           desc = "E - commerce"
           text = "View Project"
+          url = "/e-commerce"
         />
       </div>
     </div>    

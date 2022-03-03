@@ -6,6 +6,10 @@ import { useEffect } from 'react';
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Ghsearch from "./components/Github-search/Ghsearch";
+import Ecommerce from "./components/Ecommerce/Ecommerce"
+import Equalizer from "./components/Equalizer/Equalizer"
+import Loopstudio from "./components/Loopstudio/Loopstudio"
+import TipsCalc from "./components/Tips-Calculator/Tipscalc"
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
@@ -25,7 +29,11 @@ function App() {
           <Route path="/" element = {(user && <HomePage />)|| (!user && <Navigate to ="/login"/>)} />
           <Route path="/login" element = {(!user && <Login/>) || (user && <Navigate to ="/"/>)}/>
           <Route path="/register"  element = {(!user && <Register/>) || (user && <Navigate to ="/"/>)}/>
-          <Route path="/gh" element={<Ghsearch/>}/>
+          <Route path="/e-commerce" element = {(user && <Ecommerce />)} />
+          <Route path="/equalizer" element = {(user && <Equalizer />)} />
+          <Route path="/github-user-search-app" element={(user && <Ghsearch />)} />
+          <Route path="/loopstudio" element = {(user && <Loopstudio />)} />
+          <Route path="/tips-calculator" element = {(user && <TipsCalc />)} />
         </Routes>
     </Router>
   );
