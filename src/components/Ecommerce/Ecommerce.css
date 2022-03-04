@@ -113,14 +113,16 @@
     height: 42px;
     cursor: pointer;
 }
-
-.e-navbar-right img:hover{
-   border: 2px solid var(--orange);
-   border-radius: 50%;
+.e-navbar-right .cart-img{
+    margin-left: 3em;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
 }
 
-.e-navbar-right svg{
-    cursor: pointer;
+.e-navbar-right .avatar-img:hover{
+   border: 2px solid var(--orange);
+   border-radius: 50%;
 }
 
 .e-navbar ul{

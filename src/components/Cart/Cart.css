@@ -1,0 +1,28 @@
+.cart-wrapper {
+  background-color: white;
+  border-radius: 10%;
+  box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 140px;
+  right: 120px;
+  width: 300px;
+  height: 200px;
+}
+
+.cart-wrapper h3 {
+  height: 67px;
+  padding: 0 24px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.cart-wrapper p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+  color: gray;
+  font-weight: bold;
+}
