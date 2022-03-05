@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./Loopstudio.css"
 import closebtn from "../../assets/loopstudios-img/icon-close.svg"
 import logo from "../../assets/loopstudios-img/logo.svg"
@@ -11,23 +11,18 @@ import insta from "../../assets/loopstudios-img/icon-instagram.svg"
 import Backbtn from '../Backbtn/Backbtn'
 
 function Loopstudio() {
-  const showNav = () => {
-    const toggleButton = document.getElementsByClassName("loop-toggle-btn")[0];
-    const closeButton = document.getElementsByClassName("loop-close-btn")[0];
-
-    const navbarMobile = document.getElementsByClassName("loop-navbar-mobile")[0];
-    const navbarToggle = () => navbarMobile.classList.toggle("active");
-
-    toggleButton.addEventListener("click", navbarToggle);
-    closeButton.addEventListener("click", navbarToggle);
+  const [nav, showNav] = useState(false);
+  const handleNav = () => {
+    showNav(!nav)
   }
+
   return (
     <>
     <Backbtn/>
         <div className="loop-showcase-hero">
             <div className="loop-items-wrapper">
-                <nav className="loop-navbar-mobile">
-                    <img onClick={()=> showNav()} className="loop-close-btn" 
+                {nav && <nav className="loop-navbar-mobile">
+                    <img onClick={handleNav} className="loop-close-btn" 
                     src={closebtn}
                     alt=""></img>
                     <img className="loop-logo"
@@ -40,12 +35,12 @@ function Loopstudio() {
                     <li>Products</li>
                     <li>Support</li>
                     </ul>
-                </nav>
+                </nav>}
                 <nav className="loop-navbar"> 
                     <img className="loop-logo"
                     src={logo}
                     alt=""></img>
-                    <img onClick={()=> showNav()} className="loop-toggle-btn" 
+                    <img onClick={handleNav} className="loop-toggle-btn" 
                     src={hamburger}
                     alt=""></img>
                     <ul>
