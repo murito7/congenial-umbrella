@@ -28,8 +28,7 @@
 }
 
 .e-navbar-mobile{
- display: none;
- height: 110vh;
+ height: 200vh;
  width: 300px;
  background: white;
  z-index: 10;

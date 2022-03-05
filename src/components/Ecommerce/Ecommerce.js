@@ -16,11 +16,16 @@ import Cart from '../Cart/Cart';
 function Ecommerce() {
   const [quantity, setQuantity] = useState(0);
   const [cartModal, showModal] = useState(false);
+  const [nav, showNav] = useState(false);
   const [items, setItems] = useState(0);
 
   const handleClick = () => {
     showModal(!cartModal);
   };
+
+  const handleNav = () => {
+    showNav(!nav)
+  }
 
   const addToCart = () => {
     setQuantity(0)
@@ -32,8 +37,8 @@ function Ecommerce() {
       <Backbtn/>
       <body className='e-body'>
   <div className="e-container">
-    <div className="e-navbar-mobile">
-      <svg className="e-close-btn"  width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+    {nav && (<div className="e-navbar-mobile">
+      <svg className="e-close-btn" onClick={handleNav} width="14" height="15" xmlns="http://www.w3.org/2000/svg">
         <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
       </svg>
       <ul>
@@ -43,10 +48,10 @@ function Ecommerce() {
         <li>About</li>
         <li>Contact</li>
       </ul>
-    </div>
+    </div>)}
     <div className="e-navbar">
       <div className="e-navbar-left">
-        <svg className="e-hamburger" width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+        <svg className="e-hamburger" onClick={handleNav} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/>
         </svg>
         <img className='eLogo' src={eLogo}></img>
