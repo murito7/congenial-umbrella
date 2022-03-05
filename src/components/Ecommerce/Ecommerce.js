@@ -60,6 +60,7 @@ function Ecommerce() {
         {cartModal && <Cart items={items} checkout={() =>setItems(0)}/>}
       </div>
       <div className="e-navbar-right">
+      { items > 0 ? <div className='e-item-count'>{items}</div> : null}
         <img src={cart} alt='' className='cart-img' onClick={handleClick}/>
         <img src={imgavatar} alt="" className='avatar-img'/>
       </div>

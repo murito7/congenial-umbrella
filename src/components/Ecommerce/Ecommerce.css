@@ -273,6 +273,20 @@
     justify-content: center;
 }
 
+.e-item-count{
+    background-color: var(--orange);
+    color: var(--white);
+    width: 20px;
+    height: 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    left: 80px;
+    bottom: 12px;
+}
+
 .e-add-btn svg{
     fill: #fff;
     margin-right: 0.5em;
