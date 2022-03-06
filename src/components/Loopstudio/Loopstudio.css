@@ -66,6 +66,7 @@
   }
   
   .loop-navbar-mobile {
+    display: none;
     background: var(--primary-black);
     flex-direction: column;
     align-items: flex-start;
@@ -559,7 +560,7 @@
       display: none;
     }
   
-    .loop-navbar-mobile.active {
+    .loop-navbar-mobile {
       display: flex;
     }
   

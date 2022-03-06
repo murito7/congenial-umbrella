@@ -28,6 +28,7 @@
 }
 
 .e-navbar-mobile{
+ display: none;
  height: 200vh;
  width: 300px;
  background: white;
@@ -360,7 +361,7 @@
     .e-navbar-left ul li{
         display: none;
     }
-    .e-navbar-mobile.active{
+    .e-navbar-mobile{
         display: inline-block;
     }
 }
