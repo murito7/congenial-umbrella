@@ -2,12 +2,17 @@ import React, {useState} from 'react'
 import "./Ecommerce.css";
 import imgavatar from "../../assets/ecommerce-img/image-avatar.png"
 import product1 from "../../assets/ecommerce-img/image-product-1.jpg"
+import product2 from "../../assets/ecommerce-img/image-product-2.jpg"
+import product3 from "../../assets/ecommerce-img/image-product-3.jpg"
+import product4 from "../../assets/ecommerce-img/image-product-4.jpg"
 import product1th from "../../assets/ecommerce-img/image-product-1-thumbnail.jpg"
 import product2th from "../../assets/ecommerce-img/image-product-2-thumbnail.jpg"
 import product3th from "../../assets/ecommerce-img/image-product-3-thumbnail.jpg"
 import product4th from "../../assets/ecommerce-img/image-product-4-thumbnail.jpg"
 import cart from "../../assets/ecommerce-img/icon-cart.svg";
 import plus from "../../assets/ecommerce-img/icon-plus.svg"
+import next from "../../assets/ecommerce-img/icon-next.svg"
+import previous from "../../assets/ecommerce-img/icon-previous.svg"
 import minus from "../../assets/ecommerce-img/icon-minus.svg"
 import eLogo from "../../assets/ecommerce-img/logo.svg"
 import Backbtn from '../Backbtn/Backbtn'
@@ -18,6 +23,30 @@ function Ecommerce() {
   const [cartModal, showModal] = useState(false);
   const [nav, showNav] = useState(false);
   const [items, setItems] = useState(0);
+
+  const [index, setIndex] = useState(0);
+  const [images, setImgs] = useState([
+    product1,
+    product2,
+    product3,
+    product4
+  ])
+
+  const slideNext = () => {
+    if(index === images.length -1){
+      setIndex(0)
+    }else{
+      setIndex(index + 1)
+    }
+  }
+
+  const slidePrev = () => {
+    if(index === 0){
+      setIndex(images.length - 1)
+    }else{
+      setIndex(index - 1)
+    }
+  }
 
   const handleClick = () => {
     showModal(!cartModal);
@@ -73,19 +102,15 @@ function Ecommerce() {
     <div className="e-main">
       <div className="e-left-side">
         <div className="e-main-image">
-          <svg className="e-previous" width="12" height="18" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
-          </svg>
-          <img className="e-main-img" src={product1} alt=""></img>
-          <svg className='e-next' width="13" height="18" xmlns="http://www.w3.org/2000/svg">
-            <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
-          </svg>
+          <img className='e-previous' src={previous} onClick={slidePrev} />
+          <img className="e-main-img" src={images[index]} alt=""/>
+          <img className='e-next' src={next} onClick={slideNext}/>
         </div>
         <div className="e-main-images">
-          <div className="e-grid-img" id='img-1'><img src={product1th} alt=""></img></div>
-          <div className="e-grid-img" id='img-2'><img src={product2th} alt=""></img></div>
-          <div className="e-grid-img" id='img-3'><img src={product3th} alt=""></img></div>
-          <div className="e-grid-img" id='img-4'><img src={product4th} alt=""></img></div>
+          <div className="e-grid-img" id='img-1'><img src={product1th} alt=""/></div>
+          <div className="e-grid-img" id='img-2'><img src={product2th} alt=""/></div>
+          <div className="e-grid-img" id='img-3'><img src={product3th} alt=""/></div>
+          <div className="e-grid-img" id='img-4'><img src={product4th} alt=""/></div>
         </div>
       </div>
       <div className="e-right-side">
