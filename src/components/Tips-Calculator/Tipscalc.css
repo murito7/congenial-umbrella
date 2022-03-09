@@ -237,7 +237,7 @@
   @media (max-width: 375px) {
     .calc-main {
       height: 100%;
-      width: 45%;
+      width: 50%;
     }
   
     .calc-container h1 {
@@ -251,7 +251,7 @@
     }
   
     .calc-content-left {
-      width: 86%;
+      width: 75%;
       margin-top: 2em;
       padding: 0;
     }
@@ -262,23 +262,23 @@
     .calc-tip-right {
       font-size: 2em;
     }
-    .calc-content-left .content-grid .grid-item {
+    .calc-content-left .calc-content-grid .calc-grid-item {
       width: 115px;
       place-items: center;
     }
     .calc-content-left input[type="text"] {
-      width: 75%;
+      width: 90%;
     }
-    .calc-content-left .content-grid {
+    .calc-content-left .calc-content-grid {
       gap: 25px;
     }
     .calc-content-right {
-      width: 60%;
+      width: 70%;
       margin-bottom: 2em;
-      margin-right: 2.5em;
     }
     .calc-btn-reset {
       margin-top: 2em;
     }
   }
+
   

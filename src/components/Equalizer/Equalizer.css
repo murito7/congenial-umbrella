@@ -190,6 +190,9 @@
     .equalizer-nav {
       margin-left: 2em;
     }
+    .equalizer-pattern {
+      display: none;
+    }
     .equalizer-footer-logo {
       flex-direction: column;
     }
@@ -219,11 +222,14 @@
     }
     .equalizer-main-right-content {
       top: 180px;
-      right: 50px;
+      right: 35px;
     }
     .equalizer-showcase-footer {
       flex-direction: column;
       margin-top: 28em;
+    }
+    .equalizer-pattern {
+      display: none;
     }
     .equalizer-footer-socials {
       margin: 2em 0 0 4.5em;
