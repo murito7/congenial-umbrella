@@ -1,25 +1,31 @@
 import React from "react";
-import moon from "../../assets/github-user-img/icon-moon.svg";
-import sun from "../../assets/github-user-img/icon-sun.svg";
 import octocat from "../../assets/github-user-img/octocat.png";
 import location from "../../assets/github-user-img/icon-location.svg";
 import website from "../../assets/github-user-img/icon-website.svg";
 import twitter from "../../assets/github-user-img/icon-twitter.svg";
 import company from "../../assets/github-user-img/icon-company.svg";
 import "./Ghsearch.css";
+import { useDarkMode } from "../useDarkMode";
+import { Toggle } from "./Toggle";
+import { GlobalStyles, lightTheme, darkTheme } from "../GlobalStyle";
+import {ThemeProvider} from "styled-components"
 import Backbtn from "../Backbtn/Backbtn";
 
 function Ghsearch() {
+  const [theme, themeToggler] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme
   return (
     <>
+    <ThemeProvider theme={themeMode}>
     <Backbtn/>
+    <GlobalStyles/>
     <div className="g-body">
       <div className="g-container">
         <div className="g-header">
           <h1 className="g-title">devfinder</h1>
           <div className="g-mode-items">
             <p className="g-mode-type">Dark</p>
-            <img className="g-icon" src={moon} alt=""/>
+            <Toggle theme={theme} themeToggler = {themeToggler} />
           </div>
         </div>
         <div className="g-search-bar">
@@ -82,6 +88,7 @@ function Ghsearch() {
         </div>
       </div>
     </div>
+    </ThemeProvider>  
     </>
   );
 }

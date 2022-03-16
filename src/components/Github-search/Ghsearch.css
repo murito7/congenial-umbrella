@@ -16,7 +16,8 @@
 }
 
 .g-body{
-  background-color: var(--primary-light-white);
+  background: #fff;
+  padding: 10%;
 }
 
 .g-container {
@@ -48,12 +49,8 @@
 .g-header .g-mode-items {
   display: flex;
 }
-
-.g-header .g-mode-items img {
-  width: 20px;
-  height: 20px;
-  margin-left: 1em;
-  cursor: pointer;
+.g-mode-type{
+  margin-right: 15px;
 }
 
 .g-search-bar input[type="text"] {
