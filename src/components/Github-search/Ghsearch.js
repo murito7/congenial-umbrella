@@ -10,10 +10,15 @@ import { Toggle } from "./Toggle";
 import { GlobalStyles, lightTheme, darkTheme } from "../GlobalStyle";
 import {ThemeProvider} from "styled-components"
 import Backbtn from "../Backbtn/Backbtn";
+import { useState } from "react"
 
 function Ghsearch() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme
+  const [show, setShow] = useState(false);
+  const handleShowClick = ()=>{
+    setShow(!show)
+  }
   return (
     <>
     <ThemeProvider theme={themeMode}>
@@ -29,13 +34,13 @@ function Ghsearch() {
           </div>
         </div>
         <div className="g-search-bar">
-          <input
+          <input 
             name="searchBar"
             type="text"
-            placeholder="Search GitHub username..."
+            placeholder="Search GitHub username..."   
           />
-          <div className="g-btn">Search</div>
-          <div className="g-no-result-msg"></div>
+          <div className="g-btn" onClick={handleShowClick}>Search</div>
+          {show &&  <div className="g-no-result-msg">user not found !</div>}
         </div>
 
         <div className="g-main">

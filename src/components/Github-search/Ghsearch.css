@@ -93,7 +93,7 @@
 .g-no-result-msg {
   text-align: center;
   position: relative;
-  bottom: 85px;
+  bottom: 75px;
   left: 170px;
   font-family: var(--font-spacemonoreg);
   color: red;
