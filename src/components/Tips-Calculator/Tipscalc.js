@@ -4,9 +4,8 @@ import SelectTip from "./SelectTip";
 import PeopleContainer from "./PeopleContainer";
 import RecapContainer from "./RecapContainer";
 import { useEffect, useState } from "react";
-import Backbtn from '../Backbtn/Backbtn';
 
-function App() {
+function Tipscalc() {
 
   // Récupération des inputs
   const [bill, setBill] = useState(null);
@@ -43,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tipscalc;
