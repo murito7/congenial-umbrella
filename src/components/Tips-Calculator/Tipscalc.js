@@ -1,66 +1,46 @@
-import React from 'react';
 import "./Tipscalc.css";
+import BillContainer from "./BillContainer";
+import SelectTip from "./SelectTip";
+import PeopleContainer from "./PeopleContainer";
+import RecapContainer from "./RecapContainer";
+import { useEffect, useState } from "react";
 import Backbtn from '../Backbtn/Backbtn';
 
-function Tipscalc() {
+function App() {
+
+  // Récupération des inputs
+  const [bill, setBill] = useState(null);
+  const [tip, setTip] = useState(null);
+  const [nbPeople, setNbPeople] = useState(null);
+  const [tipAmount, setTipAmount] = useState(null);
+  const [totalAmount, setTotalAmount] = useState(null);
+
+  useEffect(() => {
+    if (bill > 0 && tip > 0 && nbPeople > 0) {
+      setTipAmount(parseFloat(bill * tip / 100 / nbPeople).toFixed(2));
+      setTotalAmount(parseFloat((tipAmount * nbPeople + bill) / nbPeople).toFixed(2));
+    }
+
+  }, [bill, tip, nbPeople, tipAmount, totalAmount]);
+
   return (
     <>
-      <Backbtn/>
-      <body className='calc-body'>
-          <div className="calc-container">
-    <h1>SPLI<br/>TTER</h1>
-    <div className="calc-main">
-      <div className="calc-content">
-
-        <div className="calc-content-left">
-          <div className="calc-bill">Bill</div>
-          <input type="text"></input>
-          <div className="calc-select-tip">
-            Select Tip %
+    <body className="calc-body">
+    <div>
+      <main >
+        <form className="calc-container">
+          <div className="calc-general-input-container">
+            <BillContainer setBill={setBill} />
+            <SelectTip setTip={setTip} />
+            <PeopleContainer nbPeople={nbPeople} setNbPeople={setNbPeople} />
           </div>
-          <div className="calc-content-grid">
-            <div className="calc-grid-item">5%</div>
-            <div className="calc-grid-item">10%</div>
-            <div className="calc-grid-item">15%</div>
-            <div className="calc-grid-item">25%</div>
-            <div className="calc-grid-item">50%</div>
-            <div className="calc-custom-item"><input type="text" placeholder="Custom"></input></div>
-          </div>
-          <div className="calc-num-people">Number of People</div>
-          <div className="calc-people">
-           <input type="text"></input>
-          </div>
-        </div>
-
-        <div className="calc-content-right">
-          <div className="calc-tip-amount">
-            <div className="calc-tip-left">
-            <h3>Tip Amount</h3>
-            <p>/ person</p>
-          </div>
-          <div className="calc-tip-right">
-            $4.27
-          </div>
-          </div>
-          <div className="calc-total-amount">
-            <div className="calc-total-left">
-            <h3>Total</h3>
-            <p>/ person</p>
-          </div>
-          <div className="calc-total-right">
-            $32.79
-          </div>
-          </div>
-          <div className="calc-btn-reset">
-            reset
-          </div>
-        </div>
-      </div>
+          <RecapContainer tip={tip} bill={bill} nbPeople={nbPeople} setBill={setBill} setTip={setTip} setNbPeople={setNbPeople} setTipAmount={setTipAmount} setTotalAmount={setTotalAmount} tipAmount={tipAmount} totalAmount={totalAmount} />
+        </form>
+      </main>
     </div>
-</div>
-      </body>
+    </body>
     </>
-  )
+  );
 }
 
-export default Tipscalc
+export default App;
