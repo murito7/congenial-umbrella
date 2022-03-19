@@ -224,7 +224,7 @@
   .g-main {
     height: 500px;
   }
-  .g-search-bar .btn {
+  .g-search-bar .g-btn {
     left: 440px;
   }
   .g-content-header {
@@ -233,8 +233,8 @@
   }
   .g-content-bio {
     position: relative;
-    left: -68px;
-    top: 20px;
+    left: 30px;
+    top: -20px;
   }
   .g-content-data {
     margin-top: 1em;
@@ -249,5 +249,37 @@
     position: relative;
     right: 135px;
     top: 20px;
+  }
+  .g-no-result-msg {
+    left: 100px;
+  }
+  .g-search-bar input[type="text"]{
+    padding-left: 40px;
+  }
+}
+
+@media (max-width:425px) {
+  .g-container{
+    width: 350px;
+  }
+  .g-main{
+    height: 550px;
+  }
+  .g-search-bar .g-btn {
+    left: 240px;
+  }
+  .g-search-bar input[type="text"]{
+    padding-left: 10px;
+  }
+  .g-no-result-msg {
+    bottom: 120px;
+    left: 115px;
+  }
+  .g-content-bio{
+    left: 30px;
+    top: -20px;
+  }
+  .g-content-data{
+    width: 300px;
   }
 }
