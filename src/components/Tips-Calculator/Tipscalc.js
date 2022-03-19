@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 function Tipscalc() {
 
-  // Récupération des inputs
   const [bill, setBill] = useState(null);
   const [tip, setTip] = useState(null);
   const [nbPeople, setNbPeople] = useState(null);

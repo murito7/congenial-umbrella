@@ -1,6 +1,5 @@
 const SelectTip = ({setTip}) => {
 
-    // Ouverture de l'input pour saisit du pourcentage custom
     const handleCustomInput = () => {
         document.getElementById("calc-custom").style.display = "initial";
         document.getElementById("calc-custom").focus();

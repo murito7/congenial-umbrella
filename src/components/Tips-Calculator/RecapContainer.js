@@ -32,11 +32,9 @@ const RecapContainer = ({ tip, bill, nbPeople, setBill, setTip, setNbPeople, set
             </div>
 
             {tipAmount > 0 && totalAmount > 0 && bill != null && tip != null && nbPeople != null ? (
-                // Si champ input non vide
                 <div className="calc-btn-reset-form">
                     <button type="reset" onClick={handleReset}>Reset</button>
                 </div>
-                // sinon, si champ input vide
             ) : (
                 <div className="calc-btn-reset-form empty">
                     <button type="reset" onClick={handleReset}>Reset</button>
