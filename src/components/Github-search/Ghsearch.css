@@ -282,4 +282,7 @@
   .g-content-data{
     width: 300px;
   }
+  .g-search-bar input[type="text"] {
+    padding: 23px 0 23px 40px;
+  }
 }
