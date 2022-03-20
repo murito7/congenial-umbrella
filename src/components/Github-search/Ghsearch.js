@@ -29,7 +29,7 @@ function Ghsearch() {
         <div className="g-header">
           <h1 className="g-title">devfinder</h1>
           <div className="g-mode-items">
-            <p className="g-mode-type">Dark</p>
+            {themeMode === lightTheme ? <p className="g-mode-type">Light</p> : <p className="g-mode-type">Dark</p>}
             <Toggle theme={theme} themeToggler = {themeToggler} />
           </div>
         </div>
@@ -40,7 +40,7 @@ function Ghsearch() {
             placeholder="Search GitHub username..."   
           />
           <div className="g-btn" onClick={handleShowClick}>Search</div>
-          {show &&  <div className="g-no-result-msg">user not found !</div>}
+          {show &&  <div className="g-no-result-msg">User not found !</div>}
         </div>
 
         <div className="g-main">

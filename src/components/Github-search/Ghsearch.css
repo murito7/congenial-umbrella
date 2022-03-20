@@ -56,9 +56,9 @@
 .g-search-bar input[type="text"] {
   color: var(--primary-light-darkgray);
   background: var(--primary-light-white);
-  background-image: url("../../assets/github-user-img/icon-search.svg");
-  background-position: 4% 50%;
-  background-repeat: no-repeat;
+  background-image: url("../../assets/github-user-img/icon-search.svg" ) !important;
+  background-position: 2% 55% !important;
+  background-repeat: no-repeat !important;
   width: 100%;
   padding: 23px 0 23px 75px;
   margin-top: 3em;
