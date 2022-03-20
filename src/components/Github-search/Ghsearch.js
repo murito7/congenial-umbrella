@@ -16,8 +16,11 @@ function Ghsearch() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme
   const [show, setShow] = useState(false);
-  const handleShowClick = ()=>{
-    setShow(!show)
+  const [user, setUser] = useState('');
+  const handleShowClick = ()=> {
+    if(!user == ""){
+      setShow(true)
+    }
   }
   return (
     <>
@@ -37,10 +40,12 @@ function Ghsearch() {
           <input 
             name="searchBar"
             type="text"
-            placeholder="Search GitHub username..."   
+            placeholder="Search GitHub username..."
+            value={user}
+            onChange={(e) => setUser(e.target.value)} 
           />
           <div className="g-btn" onClick={handleShowClick}>Search</div>
-          {show &&  <div className="g-no-result-msg">User not found !</div>}
+          {show && <div className="g-no-result-msg">User not found !</div>}
         </div>
 
         <div className="g-main">
